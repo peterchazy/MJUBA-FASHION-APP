@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailoring Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div>
+        <h1 data-i18n="appTitle">Tailoring Management System</h1>
+        <p data-i18n="appSubtitle">Manage customers, measurements, orders, and payments.</p>
+      </div>
+      <button id="langToggle" class="btn btn-secondary" type="button">SW</button>
+    </header>
+
+    <main class="grid-layout">
+      <section class="card">
+        <h2 data-i18n="customerSection">Add Customer</h2>
+        <form id="customerForm" class="form-grid">
+          <label>
+            <span data-i18n="name">Name</span>
+            <input id="customerName" name="customerName" type="text" required />
+          </label>
+          <label>
+            <span data-i18n="phone">Phone</span>
+            <input id="customerPhone" name="customerPhone" type="tel" required />
+          </label>
+          <button class="btn" type="submit" data-i18n="addCustomer">Add Customer</button>
+        </form>
+        <ul id="customerList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="measurementSection">Add Measurements</h2>
+        <form id="measurementForm" class="form-grid">
+          <label>
+            <span data-i18n="customer">Customer</span>
+            <select id="measurementCustomer" required></select>
+          </label>
+          <label>
+            <span data-i18n="chest">Chest</span>
+            <input id="chest" type="number" min="0" step="0.1" required />
+          </label>
+          <label>
+            <span data-i18n="waist">Waist</span>
+            <input id="waist" type="number" min="0" step="0.1" required />
+          </label>
+          <label>
+            <span data-i18n="hips">Hips</span>
+            <input id="hips" type="number" min="0" step="0.1" required />
+          </label>
+          <label>
+            <span data-i18n="length">Length</span>
+            <input id="length" type="number" min="0" step="0.1" required />
+          </label>
+          <button class="btn" type="submit" data-i18n="saveMeasurement">Save Measurement</button>
+        </form>
+        <ul id="measurementList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="orderSection">Create Order</h2>
+        <form id="orderForm" class="form-grid">
+          <label>
+            <span data-i18n="customer">Customer</span>
+            <select id="orderCustomer" required></select>
+          </label>
+          <label>
+            <span data-i18n="design">Design/Item</span>
+            <input id="orderDesign" type="text" required />
+          </label>
+          <label>
+            <span data-i18n="totalAmount">Total Amount</span>
+            <input id="orderTotal" type="number" min="0" step="0.01" required />
+          </label>
+          <label>
+            <span data-i18n="deadline">Deadline</span>
+            <input id="orderDeadline" type="date" required />
+          </label>
+          <button class="btn" type="submit" data-i18n="createOrder">Create Order</button>
+        </form>
+        <ul id="orderList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="paymentSection">Payments & Balance</h2>
+        <form id="paymentForm" class="form-grid">
+          <label>
+            <span data-i18n="order">Order</span>
+            <select id="paymentOrder" required></select>
+          </label>
+          <label>
+            <span data-i18n="paymentAmount">Payment Amount</span>
+            <input id="paymentAmount" type="number" min="0" step="0.01" required />
+          </label>
+          <button class="btn" type="submit" data-i18n="addPayment">Add Payment</button>
+        </form>
+        <div id="financeSummary" class="summary"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
