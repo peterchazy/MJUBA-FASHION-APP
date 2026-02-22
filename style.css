@@ -1,0 +1,168 @@
+:root {
+  --black: #0f0f0f;
+  --gold: #d4af37;
+  --white: #ffffff;
+  --off-white: #f6f6f6;
+  --muted: #c6c6c6;
+  --danger: #c53030;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(150deg, #111 0%, #1a1a1a 45%, #0f0f0f 100%);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(1200px, 95%);
+  margin: 1.5rem auto;
+  padding: 1rem;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.top-bar h1 {
+  margin: 0;
+  color: var(--gold);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.top-bar p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--off-white);
+  color: var(--black);
+  border-radius: 14px;
+  padding: 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #222;
+  font-size: 1.15rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  background: var(--white);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(212, 175, 55, 0.55);
+  border-color: var(--gold);
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 0.62rem 0.85rem;
+  border-radius: 10px;
+  background: var(--black);
+  color: var(--gold);
+  font-weight: 600;
+  transition: transform 0.16s ease, opacity 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.btn-secondary {
+  background: var(--gold);
+  color: var(--black);
+  min-width: 66px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0.9rem 0 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.list li {
+  border-left: 4px solid var(--gold);
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.92rem;
+}
+
+.summary {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.summary .item {
+  background: #fff;
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--black);
+}
+
+.summary .balance-danger {
+  border-left-color: var(--danger);
+}
+
+.empty {
+  color: #777;
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
